@@ -1,12 +1,15 @@
-import React from 'react';
-import { MessageCircle } from 'lucide-react';
+import React from "react";
+import { MessageCircle } from "lucide-react";
 
 const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
-    const phoneNumber = '2348065438080';
-    const message = 'Hello ITEK Construction! I would like to inquire about your services.';
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    const phoneNumber = "+2349118404860";
+    const message =
+      "Hello ITEK Construction! I would like to inquire about your services.";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
   };
 
   return (
