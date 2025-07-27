@@ -11,61 +11,78 @@ const ServicesPage: React.FC = () => {
     )}`;
     window.open(url, "_blank");
   };
+
   const services = [
     {
-      title: "Highway Construction",
+      title: "Design and Planning",
       description:
-        "Building major highways and expressways that connect cities and regions across Nigeria.",
+        "We lay the groundwork for successful road projects through meticulous design, thorough feasibility studies, and strategic project planning tailored for optimal outcomes in urban and highway infrastructure.",
       image:
         "https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      features: [
-        "Federal highway construction",
-        "Multi-lane expressway development",
-        "Highway interchange construction",
-        "Toll road infrastructure",
-        "Highway lighting and signage",
-      ],
+      features: ["Road design", "Feasibility studies", "Project planning"],
     },
     {
-      title: "Urban Road Development",
+      title: "Site Preparation",
       description:
-        "Developing comprehensive urban road networks for growing cities.",
+        "We meticulously prepare every site by undertaking comprehensive clearing, careful excavation, and accurate grading, providing the essential groundwork for durable and high-quality construction in Abuja's diverse terrain.",
+      image: "/itekbridge2.jpg",
+      features: ["Clearing", "Excavation", "Grading"],
+    },
+    {
+      title: "Procurement",
+      description:
+        "Our strategic procurement ensures your project has the right materials, equipment, and skilled workforce, managed through efficient tendering and rigorous quality control for seamless execution.",
       image:
-        "https://images.pexels.com/photos/1105766/pexels-photo-1105766.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+        "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop", // Placeholder: Image of logistics/materials
       features: [
-        "City street construction",
-        "Residential area road networks",
-        "Commercial district access roads",
-        "Parking lot construction",
-        "Pedestrian walkways and sidewalks",
+        "Materials (Asphalt, concrete, aggregates)",
+        "Equipment (Excavators, pavers, rollers)",
+        "Labor (Skilled workers, engineers, project managers)",
+        "Contracting (Tendering, bidding, contract management)",
+        "Quality control (Testing, inspection, quality assurance)",
       ],
     },
     {
-      title: "Bridge Construction",
+      title: "Pavement Construction",
       description:
-        "Engineering and constructing bridges that stand the test of time.",
+        "Building the foundation of your journey, we specialize in laying exceptional pavements. From flexible asphalt to rigid concrete and beyond, we choose and apply the optimal pavement type to guarantee a smooth, safe, and enduring road.",
       image:
         "https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-sky-162539.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
-      features: [
-        "Highway bridge construction",
-        "Pedestrian bridge development",
-        "Railway bridge construction",
-        "Bridge maintenance and repair",
-        "Structural engineering services",
-      ],
+      features: ["Asphalt", "Concrete", "Other pavement types"],
     },
     {
-      title: "Road Maintenance & Repair",
+      title: "Drainage Installation",
       description:
-        "Comprehensive maintenance services to keep roads in optimal condition.",
+        "We implement robust drainage solutions and stormwater management systems to prevent erosion and ensure the longevity and stability of all road infrastructure, especially vital for the local climate.",
       image:
         "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop",
+      features: ["Stormwater management systems"],
+    },
+    {
+      title: "Road Markings and Signage",
+      description:
+        "Ensuring safety and clear guidance, we expertly apply road markings – from painting and durable thermoplastic applications – and strategically install signage to enhance navigation and traffic flow on all completed roadways.",
+      image: "/itekbridge8.jpg", // Placeholder: Image of road markings
+      features: ["Painting", "Thermoplastic markings", "Signage installation"],
+    },
+    {
+      title: "Maintenance and Repair",
+      description:
+        "Our commitment extends beyond construction. We offer comprehensive maintenance and repair services to ensure the ongoing safety, functionality, and longevity of road infrastructure, protecting your investment for years to come.",
+      image:
+        "https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop", // Reusing an image for now, replace with a maintenance-specific one
+      features: ["Routine maintenance", "Pothole repair", "Resurfacing"],
+    },
+    {
+      title: "Additional Services", // This is the new entry for "Additional Services"
+      description:
+        "Beyond core construction, we offer specialized services including comprehensive project management, expert consulting on road infrastructure, and a steadfast commitment to integrating sustainable practices.",
+      image:
+        "https://images.pexels.com/photos/4163989/pexels-photo-4163989.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop", // Changed placeholder image for better relevance
       features: [
-        "Asphalt resurfacing and repair",
-        "Pothole repair and prevention",
-        "Road marking and signage",
-        "Drainage system maintenance",
-        "Emergency road repairs",
+        "Project management (Oversight and coordination)",
+        "Consulting (Expert advice on design, construction, and maintenance)",
+        "Sustainability (Incorporating environmentally friendly practices and materials)",
       ],
     },
   ];
@@ -211,19 +228,9 @@ const ServicesPage: React.FC = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center cursor-pointer"
             onClick={handleWhatsAppClick}
           >
-            <a
-              // onAbort={handleWhatsAppClick}
-              // href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300"
-            >
+            <a className="inline-flex items-center justify-center px-8 py-4 bg-white text-orange-500 font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300">
               Get Free Quote
             </a>
-            {/* <a
-              href="tel:+2348065438080"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-500 transition-colors duration-300"
-            >
-              Call Now
-            </a> */}
           </div>
         </div>
       </section>
