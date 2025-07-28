@@ -1,18 +1,11 @@
 import React, { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-//Images
-// import itekbridge1 from "./../images/itekbridge1.jpg";
-
 const GalleryPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // console.log(itekbridge1);
-
   const categories = ["All"];
-  // const categories = ["All", "Residential", "Commercial", "Infrastructure"];
-
   const projects = [
     {
       id: 1,
@@ -92,59 +85,59 @@ const GalleryPage: React.FC = () => {
     },
     {
       id: 11,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge10.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 12,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge11.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 13,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge12.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 14,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge13.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 15,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge14.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 16,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge15.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 17,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge16.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 18,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge17.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     {
       id: 19,
@@ -153,34 +146,139 @@ const GalleryPage: React.FC = () => {
       image: "/itekbridge18.jpg",
       description: "",
     },
-    // {
-    //   id: 9,
-    //   title: "Pedestrian Bridge",
-    //   category: "Bridges",
-    //   image: "/itekbridge9.jpg",
-    //   description: "Modern pedestrian bridge for safe road crossing.",
-    // },
-    // {
-    //   id: 9,
-    //   title: "Pedestrian Bridge",
-    //   category: "Bridges",
-    //   image: "/itekbridge9.jpg",
-    //   description: "Modern pedestrian bridge for safe road crossing.",
-    // },
-    // {
-    //   id: 9,
-    //   title: "Pedestrian Bridge",
-    //   category: "Bridges",
-    //   image: "/itekbridge9.jpg",
-    //   description: "Modern pedestrian bridge for safe road crossing.",
-    // },
-    // {
-    //   id: 9,
-    //   title: "Pedestrian Bridge",
-    //   category: "Bridges",
-    //   image: "/itekbridge9.jpg",
-    //   description: "Modern pedestrian bridge for safe road crossing.",
-    // },
+    {
+      id: 20,
+      title: "",
+      category: "",
+      image: "/itekbridge19.jpg",
+      description: "",
+    },
+    {
+      id: 21,
+      title: "",
+      category: "",
+      image: "/itekbridge20.jpg",
+      description: "",
+    },
+    {
+      id: 22,
+      title: "",
+      category: "",
+      image: "/itekbridge21.jpg",
+      description: "",
+    },
+    {
+      id: 23,
+      title: "",
+      category: "",
+      image: "/itekbridge22.jpg",
+      description: "",
+    },
+    {
+      id: 24,
+      title: "",
+      category: "",
+      image: "/itekbridge22.jpg",
+      description: "",
+    },
+    {
+      id: 25,
+      title: "",
+      category: "",
+      image: "/itekbridge23.jpg",
+      description: "",
+    },
+    {
+      id: 26,
+      title: "",
+      category: "",
+      image: "/itekbridge24.jpg",
+      description: "",
+    },
+    {
+      id: 27,
+      title: "",
+      category: "",
+      image: "/itekbridge25.jpg",
+      description: "",
+    },
+    {
+      id: 28,
+      title: "",
+      category: "",
+      image: "/itekbridge26.jpg",
+      description: "",
+    },
+    {
+      id: 29,
+      title: "",
+      category: "",
+      image: "/itekbridge27.jpg",
+      description: "",
+    },
+    {
+      id: 30,
+      title: "",
+      category: "",
+      image: "/itekbridge28.jpg",
+      description: "",
+    },
+    {
+      id: 31,
+      title: "",
+      category: "",
+      image: "/itekbridge29.jpg",
+      description: "",
+    },
+    {
+      id: 32,
+      title: "",
+      category: "",
+      image: "/itekbridge30.jpg",
+      description: "",
+    },
+    {
+      id: 33,
+      title: "",
+      category: "",
+      image: "/itekbridge31.jpg",
+      description: "",
+    },
+    {
+      id: 34,
+      title: "",
+      category: "",
+      image: "/itekbridge32.jpg",
+      description: "",
+    },
+    {
+      id: 35,
+      title: "",
+      category: "",
+      image: "/itekbridge33.jpg",
+      description: "",
+    },
+    {
+      id: 36,
+      title: "",
+      category: "",
+      image: "/itekbridge34.jpg",
+      description: "",
+    },
+    {
+      id: 37,
+      title: "",
+      category: "",
+      image: "/itekbridge35.jpg",
+      description: "",
+    },
+    {
+      id: 38,
+      title: "",
+      category: "",
+      image: "/itekbridge36.jpg",
+      description: "",
+    },
   ];
 
   const filteredProjects =
@@ -252,31 +350,55 @@ const GalleryPage: React.FC = () => {
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group"
-                onClick={() => setSelectedImage(project.id)}
-              >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+            {filteredProjects.map((project) => {
+              const hasTextContent =
+                project.title || project.category || project.description;
+
+              return (
+                <div
+                  key={project.id}
+                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
+                  // Ensure a consistent card height when there's no text content
+                  style={{ height: hasTextContent ? "auto" : "300px" }} // Adjust '300px' as needed
+                  onClick={() => setSelectedImage(project.id)}
+                >
+                  <div
+                    className={`relative overflow-hidden ${
+                      hasTextContent ? "h-64" : "flex-grow"
+                    }`}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className={`w-full object-cover group-hover:scale-110 transition-transform duration-300 ${
+                        hasTextContent ? "h-full" : "absolute inset-0 h-full"
+                      }`}
+                      style={{ objectFit: "cover" }}
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                  </div>
+
+                  {/* Conditional rendering for the text content */}
+                  {hasTextContent && (
+                    <div className="p-6 flex-shrink-0">
+                      {project.category && (
+                        <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full mb-2">
+                          {project.category}
+                        </span>
+                      )}
+                      {project.title && (
+                        <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                          {project.title}
+                        </h3>
+                      )}
+                      {project.description && (
+                        <p className="text-gray-600">{project.description}</p>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <div className="p-6">
-                  <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full mb-2">
-                    {project.category}
-                  </span>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-600">{project.description}</p>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
