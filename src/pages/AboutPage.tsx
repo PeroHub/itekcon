@@ -384,12 +384,12 @@ const AboutPage: React.FC = () => {
             >
               Get Started Today
             </a>
-            <a
+            {/* <a
               href="tel:+2348065438080"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-500 transition-colors duration-300"
             >
               Call Now
-            </a>
+            </a> */}
           </div>
         </div>
       </section>
