@@ -1,27 +1,27 @@
-import React from 'react';
-import { Award, Users, Building, Calendar } from 'lucide-react';
+import React from "react";
+import { Award, Users, Building, Calendar } from "lucide-react";
 
 const Stats: React.FC = () => {
   const stats = [
     {
       icon: Calendar,
-      value: '10+',
-      label: 'Years Experience',
+      value: "10+",
+      label: "Years Experience",
     },
     {
       icon: Building,
-      value: '200+',
-      label: 'Projects Completed',
+      value: "100+",
+      label: "Projects Completed",
     },
     {
       icon: Users,
-      value: '500+',
-      label: 'Happy Clients',
+      value: "300+",
+      label: "Happy Clients",
     },
     {
       icon: Award,
-      value: '50+',
-      label: 'Awards Won',
+      value: "20+",
+      label: "Awards Won",
     },
   ];
 
@@ -34,8 +34,12 @@ const Stats: React.FC = () => {
               <div className="flex justify-center mb-4">
                 <stat.icon className="h-12 w-12 text-orange-500" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-lg md:text-3xl font-bold text-gray-900 mb-2">
+                {stat.value}
+              </div>
+              <div className="text-sm md:text-lg text-gray-600">
+                {stat.label}
+              </div>
             </div>
           ))}
         </div>

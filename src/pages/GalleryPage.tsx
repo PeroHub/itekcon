@@ -148,10 +148,10 @@ const GalleryPage: React.FC = () => {
     },
     {
       id: 19,
-      title: "Pedestrian Bridge",
-      category: "Bridges",
+      title: "",
+      category: "",
       image: "/itekbridge18.jpg",
-      description: "Modern pedestrian bridge for safe road crossing.",
+      description: "",
     },
     // {
     //   id: 9,

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram } from "lucide-react"; // Import Facebook and Instagram icons
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -18,6 +18,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "Contact", href: "/contact" },
   ];
 
+  const socialLinks = [
+    {
+      name: "Facebook",
+      href: "", //
+      icon: Facebook,
+    },
+    {
+      name: "Instagram",
+      href: "",
+      icon: Instagram,
+    },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
 
   return (
@@ -28,7 +41,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link to="/" className="flex items-center space-x-2">
-                {/* <HardHat className="h-8 w-8 text-orange-500" /> */}
                 <img
                   src="/iteklogo.jpg"
                   height={"50px"}
@@ -36,12 +48,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   alt="logo"
                 />
                 <span className="text-xl font-bold text-gray-900">
-                  ITEK CONSTRUCTION
+                  Itek Construction Limited
                 </span>
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation and Social Icons */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
                 <Link
@@ -56,16 +68,40 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   {item.name}
                 </Link>
               ))}
-              {/* <a
-                href="tel:+2348065438080"
-                className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors duration-200"
-              >
-                Call Now
-              </a> */}
+              {/* Desktop Social Icons */}
+              <div className="flex items-center space-x-4 ml-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-orange-500 transition-colors duration-200"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                ))}
+              </div>
             </div>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+            {/* Mobile menu button and Social Icons for mobile */}
+            <div className="md:hidden flex items-center space-x-4">
+              {" "}
+              {/* Added space-x-4 for spacing */}
+              {/* Mobile Social Icons (visible even when menu is closed) */}
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-orange-500 transition-colors duration-200"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-5 w-5" />
+                </a>
+              ))}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="text-gray-700 hover:text-orange-500 focus:outline-none"
@@ -80,7 +116,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation (Dropdown) */}
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
@@ -98,12 +134,22 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   {item.name}
                 </Link>
               ))}
-              {/* <a
-                href="tel:+2348065438080"
-                className="block px-3 py-2 text-base font-medium text-white bg-orange-500 rounded-lg hover:bg-orange-600 transition-colors duration-200 mx-3 text-center"
-              >
-                Call Now
-              </a> */}
+              {/* Social Icons inside mobile menu (optional, can be removed if already in header) */}
+              {/* If you want them duplicated inside the dropdown, uncomment this block */}
+              {/* <div className="flex justify-center space-x-6 py-4 border-t border-gray-100 mt-4">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-orange-500 transition-colors duration-200"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-6 w-6" />
+                  </a>
+                ))}
+              </div> */}
             </div>
           </div>
         )}
@@ -118,15 +164,14 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center space-x-2 mb-4">
-                {/* <HardHat className="h-8 w-8 text-orange-500" /> */}
                 <img
                   src="/iteklogo.jpg"
-                  height={"50px"}
-                  width={"50px"}
+                  height={"30px"}
+                  width={"30px"}
                   alt="logo"
                 />
                 <span className="text-xl font-bold">
-                  ITEK CONSTRUCTION LIMITED
+                  Itek Construction Limited
                 </span>
               </div>
               <p className="text-gray-300 mb-4">
@@ -134,7 +179,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 experience in highway construction, urban road development, and
                 bridge construction across Nigeria.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mb-4">
+                {" "}
+                {/* Added flex-col for mobile stacking */}
                 <a
                   href="tel:+2348065438080"
                   className="text-orange-500 hover:text-orange-400"
@@ -148,6 +195,23 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   +234 802 900 6984
                 </a>
               </div>
+              {/* Social Icons in Footer */}
+              <div className="flex space-x-6 mt-6">
+                {" "}
+                {/* Added margin-top */}
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-6 w-6" />
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -157,6 +221,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 <li>Urban Road Development</li>
                 <li>Bridge Construction</li>
                 <li>Road Maintenance & Repair</li>
+                <li>Road markings and signage</li>
+                <li>Pavement construction</li>
+                <li>Site preparation</li>
+                <li>Design and planning</li>
               </ul>
             </div>
 
@@ -171,7 +239,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </div>
                 <div>
                   <p className="font-medium">Branch Office</p>
-                  <p className="text-sm">Trinity Plaza, Uyo, Akwa Ibom State</p>
+                  <p className="text-sm">
+                    Trinity Plaza 2nd Floor Right Wing Ring Road 3, Before
+                    Hensek Asphalt Yard Uyo, Akwa Ibom State
+                  </p>
                 </div>
               </div>
             </div>
@@ -179,8 +250,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
             <p>
-              &copy; 2025 ITEK Company Construction Limited. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} Itek Company Construction
+              Limited. All rights reserved.
             </p>
           </div>
         </div>

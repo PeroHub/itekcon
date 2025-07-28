@@ -94,7 +94,7 @@ const AboutPage: React.FC = () => {
   const leadership = [
     {
       name: "Engr. Ernest Mike",
-      position: "(MD) Itek construction company limited",
+      position: "(MD) ITEK CONSTRUCTION COMPANY LIMITED",
       image: "/md.jpg",
       description: "",
     },
@@ -106,8 +106,10 @@ const AboutPage: React.FC = () => {
       <section className="py-20 bg-gradient-to-br from-orange-500 to-orange-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6">About ITEK Construction</h1>
-            <p className="text-xl max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-2xl md:text-5xl font-bold mb-6">
+              About ITEK Construction
+            </h1>
+            <p className="text-sm max-w-3xl mx-auto leading-relaxed">
               Building Nigeria's road infrastructure for over a decade. We are
               committed to connecting communities and driving economic growth
               through quality road construction.
@@ -166,7 +168,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div>
               <img
-                src="https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                src="/itekoffice1.jpg"
                 alt="Road construction project"
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
@@ -327,7 +329,7 @@ const AboutPage: React.FC = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {leader.name}
                 </h3>
-                <p className="text-orange-500 font-medium mb-3">
+                <p className="text-blue-500 font-bold mb-3">
                   {leader.position}
                 </p>
                 <p className="text-gray-600">{leader.description}</p>
@@ -340,7 +342,9 @@ const AboutPage: React.FC = () => {
       <section className=" bg-white">
         <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Awards</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Certificates
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

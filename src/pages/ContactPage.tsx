@@ -69,7 +69,10 @@ const ContactPage: React.FC = () => {
                     Branch Office - Uyo
                   </h3>
                   <div className="space-y-2 text-gray-600">
-                    <p>Trinity Plaza, Uyo, Akwa Ibom State</p>
+                    <p>
+                      Trinity Plaza 2nd Floor Right Wing Ring Road 3, Before
+                      Hensek Asphalt Yard Uyo, Akwa Ibom State
+                    </p>
                     <div className="flex items-center">
                       <Phone className="h-4 w-4 text-orange-500 mr-2" />
                       <a
@@ -104,7 +107,7 @@ const ContactPage: React.FC = () => {
                     className="flex items-center text-orange-600 hover:text-orange-700 transition-colors"
                   >
                     <Mail className="h-5 w-5 mr-3" />
-                    Email: info@itekconstruction.com
+                    Email: itekconsruction@gmail.com
                   </a>
                 </div>
               </div>
