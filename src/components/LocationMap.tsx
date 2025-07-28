@@ -1,14 +1,17 @@
-import React from 'react';
-import { MapPin, Phone, Clock } from 'lucide-react';
+import React from "react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 const LocationMap: React.FC = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
-          <p className="text-xl text-gray-600">
-            Visit our offices in Abuja and Uyo for road construction consultation and project discussions.
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Locations
+          </h2>
+          <p className="text-sm md:text-lg text-gray-600">
+            Visit our offices in Abuja and Uyo for road construction
+            consultation and project discussions.
           </p>
         </div>
 
@@ -28,19 +31,21 @@ const LocationMap: React.FC = () => {
               ></iframe>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <MapPin className="h-5 w-5 text-orange-500 mr-2" />
                 Head Office - Abuja
               </h3>
-              <div className="space-y-3">
-                <p className="text-gray-600">Suite 004 Garki Mall, Garki 2 FCT, Abuja</p>
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600 md:text-normal">
+                  Suite 004 Garki Mall, Garki 2 FCT, Abuja
+                </p>
                 <div className="flex items-center text-gray-600">
                   <Phone className="h-4 w-4 text-orange-500 mr-2" />
-                  <span>+234 806 543 8080</span>
+                  <span className="text-xs">+234 806 543 8080</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Clock className="h-4 w-4 text-orange-500 mr-2" />
-                  <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+                  <span className="text-xs">Mon - Fri: 8:00 AM - 6:00 PM</span>
                 </div>
               </div>
             </div>
@@ -61,19 +66,22 @@ const LocationMap: React.FC = () => {
               ></iframe>
             </div>
             <div className="p-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
                 <MapPin className="h-5 w-5 text-orange-500 mr-2" />
                 Branch Office - Uyo
               </h3>
               <div className="space-y-3">
-                <p className="text-gray-600">Trinity Plaza, Uyo, Akwa Ibom State</p>
+                <p className="text-gray-600">
+                  Trinity Plaza 2nd Floor Right Wing Ring Road 3, Before Hensek
+                  Asphalt Yard Uyo, Akwa Ibom State.
+                </p>
                 <div className="flex items-center text-gray-600">
                   <Phone className="h-4 w-4 text-orange-500 mr-2" />
-                  <span>+234 802 900 6984</span>
+                  <span className="text-xs">+234 802 900 6984</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Clock className="h-4 w-4 text-orange-500 mr-2" />
-                  <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+                  <span className="text-xs">Mon - Fri: 8:00 AM - 6:00 PM</span>
                 </div>
               </div>
             </div>
