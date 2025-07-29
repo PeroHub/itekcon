@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const socialLinks = [
     {
       name: "Facebook",
-      href: "", //
+      href: "https://www.facebook.com/share/1AFUik7ZfK/?mibextid=wwXIfr", //
       icon: Facebook,
     },
     {
