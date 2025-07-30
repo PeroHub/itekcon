@@ -106,7 +106,7 @@ const LoginPage = () => {
             {message}
           </p>
         )}
-        <p className="mt-8 text-center text-base text-gray-600">
+        {/* <p className="mt-8 text-center text-base text-gray-600">
           Don't have an admin account?{" "}
           <a
             href="/register"
@@ -114,7 +114,7 @@ const LoginPage = () => {
           >
             Register here
           </a>
-        </p>
+        </p> */}
       </div>
     </div>
   );
