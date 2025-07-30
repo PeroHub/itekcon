@@ -16,6 +16,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: "Services", href: "/services" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
+    { name: "Admin", href: "/admin" },
+
   ];
 
   const socialLinks = [
