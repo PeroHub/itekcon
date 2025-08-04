@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+// ⚠️ NEW: Import the Play icon
+import { X, ChevronLeft, ChevronRight, Play } from "lucide-react";
 
 interface GalleryItem {
   _id: string;
   title?: string;
   category?: string;
   image: string;
+  mediaType?: "image" | "video";
   description?: string;
   date: string;
   __v: number;
@@ -32,12 +34,11 @@ const GalleryPage: React.FC = () => {
         }
         const data: GalleryItem[] = await response.json();
 
-        // Sort the data by date in ascending order
         const sortedData = [...data].sort((a, b) => {
           return new Date(a.date).getTime() - new Date(b.date).getTime();
         });
 
-        setGalleryItems(sortedData); // Set the sorted data
+        setGalleryItems(sortedData);
       } catch (err: unknown) {
         console.error("Failed to fetch gallery items:", err);
         if (err instanceof Error) {
@@ -51,10 +52,9 @@ const GalleryPage: React.FC = () => {
     };
 
     fetchGalleryData();
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   // --- Dynamic Categories ---
-  // Derive categories from fetched gallery items
   const uniqueCategories = [
     "All",
     ...new Set(
@@ -166,36 +166,54 @@ const GalleryPage: React.FC = () => {
 
                 return (
                   <div
-                    key={project._id} // Use _id from MongoDB
+                    key={project._id}
                     className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group flex flex-col"
-                    // Ensure a consistent card height when there's no text content
-                    // Adjust '300px' as needed, or use min-h-[300px] with Tailwind
                     style={{ height: hasTextContent ? "auto" : "300px" }}
-                    onClick={() => setSelectedImageId(project._id)} // Use _id for selection
+                    onClick={() => setSelectedImageId(project._id)}
                   >
                     <div
                       className={`relative overflow-hidden ${
                         hasTextContent ? "h-64" : "flex-grow"
                       }`}
                     >
-                      <img
-                        src={project.image} // Use Cloudinary URL directly
-                        alt={project.title || "Gallery Image"}
-                        className={`w-full object-cover group-hover:scale-110 transition-transform duration-300 ${
-                          hasTextContent ? "h-full" : "absolute inset-0 h-full"
-                        }`}
-                        style={{ objectFit: "cover" }}
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.onerror = null;
-                          target.src =
-                            "https://placehold.co/400x300/e0e0e0/555555?text=Image+Not+Found";
-                        }}
-                      />
+                      {/* ⚠️ MODIFIED: Conditional Rendering with Play Button Overlay */}
+                      {project.mediaType === "video" ? (
+                        <>
+                          <video
+                            src={project.image}
+                            className={`w-full object-cover group-hover:scale-110 transition-transform duration-300 ${
+                              hasTextContent ? "h-full" : "absolute inset-0 h-full"
+                            }`}
+                            style={{ objectFit: "cover" }}
+                            muted
+                            autoPlay
+                            loop
+                            playsInline
+                          />
+                          {/* Play button overlay */}
+                          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-30 group-hover:bg-opacity-50 transition-colors duration-300">
+                            <Play className="h-16 w-16 text-white opacity-80 group-hover:opacity-100 transition-opacity" />
+                          </div>
+                        </>
+                      ) : (
+                        <img
+                          src={project.image}
+                          alt={project.title || "Gallery Image"}
+                          className={`w-full object-cover group-hover:scale-110 transition-transform duration-300 ${
+                            hasTextContent ? "h-full" : "absolute inset-0 h-full"
+                          }`}
+                          style={{ objectFit: "cover" }}
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.onerror = null;
+                            target.src =
+                              "https://placehold.co/400x300/e0e0e0/555555?text=Image+Not+Found";
+                          }}
+                        />
+                      )}
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                     </div>
 
-                    {/* Conditional rendering for the text content */}
                     {hasTextContent && (
                       <div className="p-6 flex-shrink-0">
                         {project.category && (
@@ -235,17 +253,26 @@ const GalleryPage: React.FC = () => {
             </button>
 
             <div className="bg-white rounded-xl overflow-hidden">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title || "Gallery Image"}
-                className="w-full h-96 object-cover"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.onerror = null;
-                  target.src =
-                    "https://placehold.co/800x600/e0e0e0/555555?text=Image+Not+Found";
-                }}
-              />
+              {/* ⚠️ MODIFIED: Conditional Rendering in the Modal */}
+              {selectedProject.mediaType === "video" ? (
+                <video
+                  src={selectedProject.image}
+                  controls
+                  className="w-full h-96 object-cover"
+                />
+              ) : (
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title || "Gallery Image"}
+                  className="w-full h-96 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.onerror = null;
+                    target.src =
+                      "https://placehold.co/800x600/e0e0e0/555555?text=Image+Not+Found";
+                  }}
+                />
+              )}
               <div className="p-6">
                 {selectedProject.category && (
                   <span className="inline-block px-3 py-1 bg-orange-100 text-orange-600 text-xs font-medium rounded-full mb-2">
