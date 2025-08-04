@@ -44,8 +44,8 @@ const AdminDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(8);
 
-  // const API_BASE_URL = "https://itekconstruction.onrender.com/api/gallery";
-  const API_BASE_URL = "http://localhost:5000/api/gallery";
+ const API_BASE_URL = "https://itekconstruction.onrender.com/api/gallery";
+//   const API_BASE_URL = "http://localhost:5000/api/gallery";
 
   useEffect(() => {
     if (auth && auth.token) {
