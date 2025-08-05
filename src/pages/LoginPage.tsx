@@ -7,6 +7,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const auth = useAuth();
   //   const login = auth?.login;
   const navigate = useNavigate();
@@ -16,7 +17,8 @@ const LoginPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage("");
-    console.log(email, password);
+    setLoading(true);
+    // console.log(email, password);
     try {
       const response = await fetch(
         "https://itekconstruction.onrender.com/api/auth/login",
@@ -37,6 +39,7 @@ const LoginPage = () => {
         //   login(data.token);
         // }
         setMessage(data.msg);
+        setLoading(false);
         navigate(from, { replace: true });
       } else {
         setMessage(data.msg || "Login failed");
@@ -90,8 +93,9 @@ const LoginPage = () => {
           </div>
           <div>
             <button
+              disabled={loading}
               type="submit"
-              className="w-full flex justify-center py-1 px-2 border border-transparent rounded-lg shadow-md text-lg font-bold text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out transform hover:scale-105"
+              className={`${loading ? "bg-orange-300 cursor-not-allowed" : "bg-orange-600 hover:bg-orange-500"} w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-semibold text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-200`}
             >
               Login
             </button>

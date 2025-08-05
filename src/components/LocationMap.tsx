@@ -2,37 +2,41 @@ import React from "react";
 import { MapPin, Phone, Clock } from "lucide-react";
 
 const LocationMap: React.FC = () => {
+  // Correct coordinates for the offices
+  const abujaCords = "9.028875291079673, 7.493902348878252"; // Placeholder coordinates
+  const uyoCords = "5.018607770164809, 7.977030856878277"; // Placeholder coordinates 5.018607770164809, 7.977030856878277
+
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-4">
+    <section className="bg-gray-50 py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 md:text-4xl">
             Our Locations
           </h2>
-          <p className="text-sm md:text-lg text-gray-600">
+          <p className="text-sm text-gray-600 md:text-lg">
             Visit our offices in Abuja and Uyo for road construction
             consultation and project discussions.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
           {/* Head Office */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="h-64 bg-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.6267!2d7.4898!3d9.0319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48acd%3A0x4a406d7be39b3fae!2sGarki%2C%20Abuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1735000000000!5m2!1sen!2sng"
+                src={`https://maps.google.com/maps?q=${abujaCords}&z=15&output=embed`}
                 width="100%"
                 height="256"
                 style={{ border: 0 }}
-                allowFullScreen
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Abuja Head Office Location"
               ></iframe>
             </div>
             <div className="p-6">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <MapPin className="h-5 w-5 text-orange-500 mr-2" />
+              <h3 className="mb-4 flex items-center text-lg font-semibold text-gray-900 md:text-xl">
+                <MapPin className="mr-2 h-5 w-5 text-orange-500" />
                 Head Office - Abuja
               </h3>
               <div className="space-y-2">
@@ -40,11 +44,11 @@ const LocationMap: React.FC = () => {
                   Suite 004 Garki Mall, Garki 2 FCT, Abuja
                 </p>
                 <div className="flex items-center text-gray-600">
-                  <Phone className="h-4 w-4 text-orange-500 mr-2" />
+                  <Phone className="mr-2 h-4 w-4 text-orange-500" />
                   <span className="text-xs">+234 806 543 8080</span>
                 </div>
                 <div className="flex items-center text-gray-600">
-                  <Clock className="h-4 w-4 text-orange-500 mr-2" />
+                  <Clock className="mr-2 h-4 w-4 text-orange-500" />
                   <span className="text-xs">Mon - Fri: 8:00 AM - 6:00 PM</span>
                 </div>
               </div>
@@ -52,22 +56,22 @@ const LocationMap: React.FC = () => {
           </div>
 
           {/* Branch Office */}
-          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div className="overflow-hidden rounded-xl bg-white shadow-lg">
             <div className="h-64 bg-gray-200">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.2736!2d7.9319!3d5.0447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1069cd4f8b3b3b3b%3A0x2222222222222222!2sUyo%2C%20Akwa%20Ibom%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1735000000000!5m2!1sen!2sng"
+                src={`https://maps.google.com/maps?q=${uyoCords}&z=15&output=embed`}
                 width="100%"
                 height="256"
                 style={{ border: 0 }}
-                allowFullScreen
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Uyo Branch Office Location"
               ></iframe>
             </div>
             <div className="p-6">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <MapPin className="h-5 w-5 text-orange-500 mr-2" />
+              <h3 className="mb-4 flex items-center text-lg font-semibold text-gray-900 md:text-xl">
+                <MapPin className="mr-2 h-5 w-5 text-orange-500" />
                 Branch Office - Uyo
               </h3>
               <div className="space-y-3">
@@ -76,11 +80,11 @@ const LocationMap: React.FC = () => {
                   Asphalt Yard Uyo, Akwa Ibom State.
                 </p>
                 <div className="flex items-center text-gray-600">
-                  <Phone className="h-4 w-4 text-orange-500 mr-2" />
+                  <Phone className="mr-2 h-4 w-4 text-orange-500" />
                   <span className="text-xs">+234 802 900 6984</span>
                 </div>
                 <div className="flex items-center text-gray-600">
-                  <Clock className="h-4 w-4 text-orange-500 mr-2" />
+                  <Clock className="mr-2 h-4 w-4 text-orange-500" />
                   <span className="text-xs">Mon - Fri: 8:00 AM - 6:00 PM</span>
                 </div>
               </div>
