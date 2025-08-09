@@ -98,6 +98,18 @@ const AboutPage: React.FC = () => {
       image: "/md.jpg",
       description: "",
     },
+    {
+      name: "Engr. Obinna Paul Peter",
+      position: "DIRECTOR ITEK CONSTRUCTION COMPANY LIMITED",
+      image: "/obinna.jpg",
+      description: "",
+    },
+    {
+      name: "Engr. Maduekwe Eberechukwu James",
+      position: "DIRECTOR ITEK CONSTRUCTION COMPANY LIMITED",
+      image: "/Maduekwe.jpg",
+      description: "",
+    },
   ];
 
   return (
