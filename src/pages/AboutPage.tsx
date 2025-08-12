@@ -100,7 +100,8 @@ const AboutPage: React.FC = () => {
     },
     {
       name: "Engr. Obinna Paul Peter",
-      position: "DIRECTOR ITEK CONSTRUCTION COMPANY LIMITED",
+      position:
+        "DIRECTOR ITEK CONSTRUCTION COMPANY LIMITED / MD ONA-PAL GLOBAL RESOURCES LIMITED",
       image: "/obinna.jpg",
       description: "",
     },
